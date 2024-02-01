@@ -1,0 +1,11 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+<br>
+{% for i in posts %}
+
+  <p> {{ i['body'] }} By: {{ i['username'] }} </p>
+  
+{% endfor %}
+
+{% endblock %}

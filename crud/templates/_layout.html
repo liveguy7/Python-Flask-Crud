@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="static/script.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class='imghmain'width="50px" height="50px" href="#" src="{{ url_for('static', filename='blog1.jpg') }}" />
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('blog.create') }}">Add Blog</a></li>
+                    <li><a href="{{ url_for('blog.contact') }}">Contact</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+         
+                    <li class="nav-item ml-auto">
+                        <a href="{{ url_for('auth.register') }}" class="nav-link text-dark glyphicon glyphicon-user">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4">
+                <div class="content-section">
+                    <h3>Active Side View</h3>
+                    <p class='text-muted'>
+                        Welcome to Jello Posts
+                        <ul class="list-group">
+                          <li class="list-group-item"><a href="{{ url_for('blog.create') }}">Blog</a></li>
+                          <li class="list-group-item"><a href="{{ url_for('auth.register') }}">Register</a></li>
+                          <li class="list-group-item"><a href="{{ url_for('blog.index') }}">About</a></li>
+                          <li class="list-group-item"><a href="{{ url_for('blog.get_post') }}">View Blogs</a></li>
+                        </ul>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Application</p>
+        </footer>
+    </main>
+
+
+
+</body>
+</html>
+
+
+
